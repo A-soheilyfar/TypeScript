@@ -29,7 +29,7 @@ tsc --init
 ```
 ## 🧠 انواع داده پایه‌ای
 
-```bash
+```ts
 let isActive: boolean = true;
 let age: number = 28;
 let firstName: string = "Ali";
@@ -49,7 +49,7 @@ let role: Role = Role.Admin;
 
 ## انواع توابع
 
-```bash
+```ts
 function greet(name: string): string {
   return `Hi ${name}`;
 }
@@ -63,7 +63,7 @@ function log(msg: string = "پیام", id?: number): void {
 
 ## 🧱 اینترفیس
 
-```bash
+```ts
 interface User {
   id: number;
   name: string;
@@ -76,7 +76,7 @@ let user: User = { id: 1, name: "Reza" };
 
 
 ## 🏗 کلاس و وراثت
-```bash
+```ts
 class Animal {
   constructor(public name: string) {}
   speak() {
@@ -94,7 +94,7 @@ class Dog extends Animal {
 
 ## 🧬 جنریک‌ها
 
-```bash
+```ts
 
 function identity<T>(val: T): T {
   return val;
@@ -106,7 +106,7 @@ let output = identity<number>(5);
 
 
 ## 🎲 Union & Type Guards
-```bash
+```ts
 
 function print(id: number | string) {
   if (typeof id === "string") {
@@ -117,7 +117,7 @@ function print(id: number | string) {
 
 
 ## 🧰 Utility Types
-```bash
+```ts
 type Todo = { title: string; done: boolean };
 
 let partial: Partial<Todo> = { title: "Test" };
@@ -136,7 +136,7 @@ project/
 
 ```
 ## ⚙️ tsconfig.json
-```bash
+```json
 {
   "compilerOptions": {
     "target": "ES6",
@@ -148,11 +148,12 @@ project/
 ```
 
 ## 🔹 Arrow Function
+
 <div dir="rtl">
 Arrow function‌ ها در TypeScript مشابه JavaScript هستند اما با تایپ استاتیک.</div>
 
 
-```bash
+```ts
 const sum = (a: number, b: number): number => {
   return a + b;
 };
@@ -160,9 +161,8 @@ const sum = (a: number, b: number): number => {
 ```
 
 ## 🔍 تفاوت function و arrow function
-```bash
-
-// تابع معمولی
+```ts
+//function
 function greet1(name: string): string {
   return `Hello ${name}`;
 }
@@ -176,7 +176,7 @@ const greet2 = (name: string): string => {
 ```
 
 ## 🚫 مهم: تفاوت در رفتار this
-```bash
+```ts
 class Counter {
   count = 0;
 
@@ -201,7 +201,7 @@ class Counter {
 ```
 
 ## 🕰 async / await در TypeScript
-```bash
+```ts
 
 const fetchData = async (): Promise<string> => {
   return "Data fetched";
