@@ -19,19 +19,20 @@ npm install -g typescript
 
 ```
 ## کامپایل یک فایل .ts
-
+```bash
 tsc index.ts
+```
 ## ایجاد فایل tsconfig:
 
-
+```bash
 tsc --init
-
+```
 ##🧠 انواع داده پایه‌ای
 
-
+```bash
 let isActive: boolean = true;
 let age: number = 28;
 let firstName: string = "Ali";
 let anything: any = "Can be anything";
-
+```
 
