@@ -117,6 +117,8 @@ function print(id: number | string) {
 
 
 ## 🧰 Utility Types
+TypeScript یک‌سری type helpers داخلی داره که کار با types رو سریع‌تر و امن‌تر می‌کنن.
+
 ```ts
 type Todo = { title: string; done: boolean };
 
@@ -124,6 +126,9 @@ let partial: Partial<Todo> = { title: "Test" };
 let readonlyTodo: Readonly<Todo> = { title: "x", done: false };
 
 ```
+### 🔹 Partial<T>
+تمام پراپرتی‌های یک type رو اختیاری می‌کنه.
+
 
 
 ## 📦 پروژه نمونه
@@ -328,3 +333,94 @@ type User = {
 | تعریف primitive | ❌              | ✅                  |
 
 
+
+## 🌐 دسترسی به DOM
+```ts
+const input = document.querySelector<HTMLInputElement>("#username");
+
+if (input) {
+  input.value = "Ali";
+}
+```
+
+## ❗️ مدیریت خطا (Error Handling)
+
+```ts
+function safeDivide(a: number, b: number): number {
+  if (b === 0) throw new Error("Division by zero!");
+  return a / b;
+}
+
+try {
+  safeDivide(10, 0);
+} catch (error) {
+  console.error((error as Error).message);
+}
+
+```
+
+
+```ts
+function Log(target: any, propertyName: string) {
+  console.log(`Property decorated: ${propertyName}`);
+}
+
+class Person {
+  @Log
+  name: string = "Ali";
+}
+
+```
+### ⚠️ نیاز به فعال‌سازی در tsconfig.json:
+
+```json
+
+"experimentalDecorators": true
+
+
+```
+
+<div dir="rtl">
+
+
+  
+## ✅ خلاصه مهم‌ترین نکات
+همیشه از strict در tsconfig استفاده کن
+
+Arrow Function از this محیط استفاده می‌کنه
+
+interface برای ساختارهای پیچیده بهتره
+
+type برای primitive‌ها و ترکیب تایپ‌ها عالیه
+
+از async/await برای کار با Promise استفاده کن
+
+از utility type‌ها مثل Partial, Readonly, Record زیاد استفاده کن
+
+## ✅ چک‌لیست یادگیری TypeScript
+ انواع داده‌ها (number, string, boolean, ...)
+
+ آرایه و تاپل
+
+ انوم (Enum)
+
+ توابع و Arrow Functions
+تفاوت Interface و Type
+
+ کلاس و وراثت
+
+ ماژول‌ها (import/export)
+
+ جنریک‌ها
+
+و Utility Types
+
+ مدیریت خطا
+
+ کار با DOM
+
+ و async/await
+
+و Decorators (اختیاری)
+
+</div>
