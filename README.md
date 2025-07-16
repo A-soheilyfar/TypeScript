@@ -212,5 +212,43 @@ fetchData().then((data) => console.log(data));
 
 ```
 
+## 📦 Import / Export (ماژول‌ها)
+### export در فایل A:
 
+```ts
+export const PI = 3.14;
+
+export function calcArea(radius: number): number {
+  return PI * radius * radius;
+}
+
+```
+### import در فایل B:
+
+```ts
+import { PI, calcArea } from "./circle";
+```
+
+
+## 🗂 namespace vs module
+### ✅ Module
+از import/export استفاده می‌کنه
+
+بهترین روش در پروژه‌های مدرن
+
+
+
+### 🧩 Namespace (قدیمی‌تر):
+```ts
+namespace Utils {
+  export function log(msg: string) {
+    console.log(msg);
+  }
+}
+
+Utils.log("Hello");
+
+```
+
+## ⚖️ interface vs type
 
