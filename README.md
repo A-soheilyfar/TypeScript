@@ -135,5 +135,82 @@ project/
 └── README.md
 
 ```
+## ⚙️ tsconfig.json
+```bash
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
+```
+
+## 🔹 Arrow Function
+<div dir="rtl">
+Arrow function‌ ها در TypeScript مشابه JavaScript هستند اما با تایپ استاتیک.</div>
+
+
+```bash
+const sum = (a: number, b: number): number => {
+  return a + b;
+};
+
+```
+
+## 🔍 تفاوت function و arrow function
+```bash
+
+// تابع معمولی
+function greet1(name: string): string {
+  return `Hello ${name}`;
+}
+
+// Arrow Function
+const greet2 = (name: string): string => {
+  return `Hello ${name}`;
+};
+
+
+```
+
+## 🚫 مهم: تفاوت در رفتار this
+```bash
+class Counter {
+  count = 0;
+
+  // تابع معمولی - this اشتباه میشه
+  startWrong() {
+    setTimeout(function () {
+      this.count++;
+      console.log(this.count); // ❌ undefined یا NaN
+    }, 1000);
+  }
+
+  // Arrow Function - this درست باقی می‌مونه
+  startRight() {
+    setTimeout(() => {
+      this.count++;
+      console.log(this.count); // ✅ درست
+    }, 1000);
+  }
+}
+
+
+```
+
+## 🕰 async / await در TypeScript
+```bash
+
+const fetchData = async (): Promise<string> => {
+  return "Data fetched";
+};
+
+fetchData().then((data) => console.log(data));
+
+
+```
+
 
 
